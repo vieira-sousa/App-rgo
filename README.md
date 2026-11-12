@@ -28,7 +28,7 @@ Each output shows the primary recommendation, alternative/conditional pathways, 
 ## Optional local AI (Ollama)
 - Restricted by a Content-Security-Policy to `http://localhost:11434` / `127.0.0.1:11434`. If Ollama isn't running, the assistant stays inactive.
 - It only (1) proposes field values extracted from pasted text, which the clinician must accept one by one (accepted fields are flagged "◆ IA — verificar"), and (2) drafts narrative text for the Ata, which is printed only after it's marked as reviewed. It never produces recommendations.
-- For `file://` pages, start Ollama with `OLLAMA_ORIGINS="null"` (or `"*"`), or serve the file from localhost.
+- For `file://` pages, set the environment variable `OLLAMA_ORIGINS=*` and restart Ollama, or serve the file from localhost. Keep `OLLAMA_HOST` at its default (127.0.0.1) so Ollama is not exposed to the hospital network.
 
 ## Known limitations (must be reviewed before any clinical use)
 - The rules simplify the guidelines. Thresholds, regimens and drug availability (INFARMED/AUE) must be validated locally by the HPB group.

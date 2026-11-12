@@ -2116,7 +2116,7 @@ function renderAI() {
     <div id="aiOut"></div>
     <div class="f wide" style="margin-top:.7rem"><label for="aiNarr">Rascunho narrativo da Ata (editável)</label><textarea id="aiNarr" rows="5">${esc(App.c.ai.narrative)}</textarea>
       <label class="chk" style="margin-top:.35rem"><input type="checkbox" id="aiReviewed"${App.c.ai.reviewed ? ' checked' : ''}><span>Revi e validei este texto — incluir na Ata impressa</span></label></div>
-    <p class="small muted">Se a ligação falhar a partir de <span class="mono">file://</span>, iniciar o Ollama com <span class="mono">OLLAMA_ORIGINS="null"</span> (ou "*") ou servir este ficheiro via <span class="mono">http://localhost</span>. O assistente fica inativo se o Ollama não estiver em execução.</p>`;
+    <p class="small muted">Se a ligação falhar a partir de <span class="mono">file://</span>, definir a variável de ambiente <span class="mono">OLLAMA_ORIGINS=*</span> e reiniciar o Ollama, ou servir este ficheiro via <span class="mono">http://localhost</span>. O assistente fica inativo se o Ollama não estiver em execução.</p>`;
   $('#aiDrawer').open = open;
   renderAIStatus(); renderAIModels();
 }
